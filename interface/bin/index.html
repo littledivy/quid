@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Psych</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="bg">
+        <div id="particles-js"></div>
+    </div>
+    <div class="page-single">
+        <div id="login" class="modal-block modal-visible">
+            <div class="modal-block-content">
+                <h3>Welcome to Psych!</h3>
+                <form class="form-horizontal" autocomplete="off">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <p class="help-block2 mb-25">You agree to the <a href="/terms" class="clr-primary link-underline">terms and conditions</a>. Don't you?</p>
+                        <button type="button" id="join" class="btn btn-block btn-radius btn-primary">Start</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="choose" class="modal-block modal-visible" style="display:none;">
+            <div class="modal-block-content">
+                <h3 id="welcome-user"></h3>
+                <form class="form-horizontal" autocomplete="off">
+<div class="form-group">
+                         <label for="username">Enter Game Code</label>
+                        <input type="text" id="code" class="form-control" /><br><br>
+                        <button type="button" id="join-game" class="btn btn-block btn-radius btn-primary">Join an game</button>                    </div>
+                    <div class="form-group">
+                        <p class="help-block2 mb-25">You agree to the <a href="/terms" class="clr-primary link-underline">terms and conditions</a>. Don't you?</p>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="lobby" class="modal-block modal-visible" style="display:none;">
+            <div class="modal-block-content">
+                <h3>Lobby</h3>
+                <form class="form-horizontal" autocomplete="off">
+<div class="form-group">
+                <div id="players" class="container">
+                </div>
+                        <button type="button" id="start-game" class="btn btn-block btn-radius btn-primary">Start Game</button>                    </div>
+                </form>
+            </div>
+        </div>
+       <div id="game-board" class="modal-block modal-visible" style="display:none;">
+            <div class="modal-block-content">
+                <h3>Arena</h3>
+                <form class="form-horizontal" autocomplete="off">
+<div class="form-group">
+                <h4 id="question">What is my name?</h4><br>
+                         <label for="answer">Answer</label>
+                <input type="text" id="answer" class="form-control" /><br>
+                </div>
+                        <button type="button" id="answer-button" class="btn btn-block btn-radius btn-primary">Submit</button>                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="answer-board" class="modal-block modal-visible" style="display:none;">
+            <div class="modal-block-content">
+                <h3>Choose one answer</h3>
+                <form class="form-horizontal" autocomplete="off">
+<div class="form-group">
+                <div id="answers-append"></div>
+              </div></div>
+                </form>
+            </div>
+        </div>
+        <div id="winner" class="modal-block modal-visible" style="display:none;">
+            <div class="modal-block-content">
+                <h3>Results for this question</h3>
+                <form class="form-horizontal" autocomplete="off">
+<div class="form-group">
+                <div id="winner-append"></div>
+              </div></div>
+                </form>
+            </div>
+        </div>
+        <div id="game-over" class="modal-block modal-visible" style="display:none;">
+            <div class="modal-block-content">
+                <h3>Results for this question</h3>
+                <form class="form-horizontal" autocomplete="off">
+<div class="form-group">
+                <div id="final-winner"></div>
+              </div></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+    <!-- from jQuery's CDN (http://jquery.com/download/#using-jquery-with-a-cdn) -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+	$.fn.randomize = function(selector){
+	    (selector ? this.find(selector) : this).parent().each(function(){
+		$(this).children(selector).sort(function(){
+		    return Math.random() - 0.5;
+		}).detach().appendTo(this);
+	    });
+
+	    return this;
+	};
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
